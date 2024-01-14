@@ -2,7 +2,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initially show the "Please" cat GIF
     showCatImage('please.gif');
     // Play the music before the question when the first GIF is loaded
-    document.getElementById('musicBefore').play();
+    const musicBefore = document.getElementById('musicBefore');
+    musicBefore.play().then(() => {
+        // Ensure the music plays on some browsers
+        setTimeout(() => {
+            musicBefore.pause();
+            musicBefore.currentTime = 0;
+        }, 100);
+    });
 });
 
 function handleYes() {
@@ -39,7 +46,7 @@ function changeVolume() {
     const volumeControl = document.getElementById('volumeControl');
     const musicBefore = document.getElementById('musicBefore');
     const musicAfter = document.getElementById('musicAfter');
-
+    
     // Set the volume for both audio elements
     musicBefore.volume = volumeControl.value;
     musicAfter.volume = volumeControl.value;
