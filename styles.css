@@ -5,10 +5,12 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    flex-direction: column; /* Updated to column layout */
 }
 
 .container {
     text-align: center;
+    margin-bottom: 20px; /* Added margin at the bottom */
 }
 
 #cat {
@@ -16,11 +18,14 @@ body {
     height: 300px;
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 20px; /* Added margin at the bottom */
 }
 
 #buttons-container {
     display: flex;
     justify-content: center;
+    flex-direction: column; /* Updated to column layout */
+    align-items: center;
 }
 
 button {
@@ -38,4 +43,8 @@ button {
 #noBtn {
     background-color: red;
     color: white;
+}
+
+#volumeControl {
+    margin-top: 10px; /* Added margin at the top */
 }
