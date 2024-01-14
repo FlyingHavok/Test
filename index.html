@@ -18,7 +18,7 @@
 <body>
     <div class="container">
         <audio id="musicBefore" autoplay loop volume="0.5">
-            <source src="music_before.mp3" type="audio/mp3"> <!-- Replace 'music_before.mp3' with your actual music file -->
+            <source src="music_before.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
         <h1 id="question">Will you go out with me?</h1>
@@ -26,15 +26,14 @@
         <div id="buttons-container">
             <button id="yesBtn" onclick="handleYes()">Yes</button>
             <button id="noBtn" onmouseover="handleNoHover()">No</button>
+            <!-- New volume control slider -->
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume()">
         </div>
         <audio id="musicAfter" loop volume="0.5">
-            <source src="music_after.mp3" type="audio/mp3"> <!-- Replace 'music_after.mp3' with your actual music file -->
+            <source src="music_after.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </div>
-
-    <!-- New volume control slider -->
-    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume()">
 
     <script src="script.js"></script>
 </body>
