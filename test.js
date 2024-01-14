@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function handleYes() {
-    document.getElementById('question').innerText = 'Yay, Finally! <3';
+    document.getElementById('question').innerText = 'Yay, finally! <3';
     // Show the dancing cat GIF after clicking Yes
     showCatEmbed('25266051', 'dance 2s infinite');
     document.getElementById('yesBtn').style.display = 'none';
@@ -22,27 +22,7 @@ function handleNoHover() {
 
 function showCatEmbed(postId, animation = '') {
     const catDiv = document.getElementById('cat');
-    catDiv.innerHTML = ''; // Clear existing content
-    const embedDiv = document.createElement('div');
-    embedDiv.className = 'tenor-gif-embed';
-    embedDiv.dataset.postid = postId;
-    embedDiv.dataset.shareMethod = 'host';
-    embedDiv.dataset.aspectRatio = '1';
-    embedDiv.dataset.width = '100%';
-    catDiv.appendChild(embedDiv);
-
-    // Re-create the Tenor embed script
-    const existingScript = document.getElementById('tenor-embed-script');
-    if (existingScript) {
-        existingScript.remove();
-    }
-
-    const script = document.createElement('script');
-    script.src = 'https://tenor.com/embed.js';
-    script.id = 'tenor-embed-script';
-    script.async = true;
-    document.body.appendChild(script);
-
+    catDiv.innerHTML = `<iframe src="https://tenor.com/embed/${postId}/?autoplay=true" width="100%" height="100%" frameborder="0" class="tenor-gif-embed" allowfullscreen></iframe>`;
     if (animation !== '') {
         catDiv.style.animation = animation;
     }
