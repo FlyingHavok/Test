@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Initially show the "Please" cat GIF
     showCatImage('please.gif');
-    // Play the music before the question
-    document.getElementById('musicBefore').play();
+    // Play the music before the question when the first GIF is loaded
+    document.getElementById('musicBefore').addEventListener('canplaythrough', function () {
+        document.getElementById('musicBefore').play();
+    });
 });
 
 function handleYes() {
