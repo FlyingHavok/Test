@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Initially show the "Please" cat GIF
     showCatImage('please.gif');
-    // Play the music before the question when the first GIF is loaded
+});
+
+function playBeforeMusic() {
+    // Play the music before the question on user interaction
     const musicBefore = document.getElementById('musicBefore');
     musicBefore.play();
-});
+}
 
 function handleYes() {
     document.getElementById('question').innerText = 'Yay, finally!';
