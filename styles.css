@@ -21,9 +21,16 @@ body {
     margin-bottom: 20px; /* Added margin at the bottom */
 }
 
+#buttons-volume-container {
+    display: flex;
+    flex-direction: column; /* Updated to column layout */
+    align-items: center;
+}
+
 #buttons-container {
     display: flex;
     justify-content: center;
+    margin-bottom: 10px; /* Added margin at the bottom */
 }
 
 button {
