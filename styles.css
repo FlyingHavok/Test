@@ -27,6 +27,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 20px; /* Added margin at the bottom */
+    
+    /* Adjusted right margin */
+    margin-right: 50px; /* Change the value as needed */
 }
 
 #buttons-volume-container {
