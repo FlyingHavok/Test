@@ -17,6 +17,13 @@ body {
     margin-bottom: 10px; /* Added margin at the bottom of the question */
 }
 
+#button-music-volume-container {
+    display: flex;
+    flex-direction: column; /* Updated to column layout */
+    align-items: center;
+    justify-content: center; /* Centered vertically */
+}
+
 #cat-container {
     position: relative;
 }
@@ -27,11 +34,10 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 20px; /* Added margin at the bottom */
-    margin-right: 50px; /* Moved the "Please" gif more to the right */
 }
 
 #playMusicBtn {
-    margin-top: 10px; /* Added margin at the top */
+    margin-bottom: 10px; /* Added margin at the bottom */
 }
 
 #buttons-volume-container {
