@@ -35,3 +35,14 @@ function showCatImage(src, animation = '') {
         catDiv.style.animation = animation;
     }
 }
+
+// New function to change the volume
+function changeVolume() {
+    const volumeControl = document.getElementById('volumeControl');
+    const musicBefore = document.getElementById('musicBefore');
+    const musicAfter = document.getElementById('musicAfter');
+    
+    // Set the volume for both audio elements
+    musicBefore.volume = volumeControl.value;
+    musicAfter.volume = volumeControl.value;
+}
