@@ -27,9 +27,11 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 20px; /* Added margin at the bottom */
-    
-    /* Adjusted right margin */
-    margin-right: 50px; /* Change the value as needed */
+    margin-right: 50px; /* Moved the "Please" gif more to the right */
+}
+
+#playMusicBtn {
+    margin-top: 10px; /* Added margin at the top */
 }
 
 #buttons-volume-container {
