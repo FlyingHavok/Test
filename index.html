@@ -23,12 +23,15 @@
         </audio>
         <h1 id="question">Will you go out with me?</h1>
         <div id="cat"></div>
-        <div id="buttons-container">
-            <button id="yesBtn" onclick="handleYes()">Yes</button>
-            <button id="noBtn" onmouseover="handleNoHover()">No</button>
+        <!-- New container for buttons and volume control -->
+        <div id="buttons-volume-container">
+            <div id="buttons-container">
+                <button id="yesBtn" onclick="handleYes()">Yes</button>
+                <button id="noBtn" onmouseover="handleNoHover()">No</button>
+            </div>
+            <!-- New volume control slider -->
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume()">
         </div>
-        <!-- New volume control slider -->
-        <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume()">
         <audio id="musicAfter" loop volume="0.5">
             <source src="music_after.mp3" type="audio/mp3">
             Your browser does not support the audio element.
