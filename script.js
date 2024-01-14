@@ -1,14 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Initially show the "Please" cat GIF
     showCatImage('please.gif');
+    // Play the music before the question
+    document.getElementById('musicBefore').play();
 });
 
 function handleYes() {
-    document.getElementById('question').innerText = 'Yay, finally! <3';
+    document.getElementById('question').innerText = 'Yay, finally!';
     // Show the dancing cat GIF after clicking Yes
     showCatImage('dance.gif', 'dance 2s infinite');
     document.getElementById('yesBtn').style.display = 'none';
     document.getElementById('noBtn').style.display = 'none';
+    // Pause the music before the question
+    document.getElementById('musicBefore').pause();
+    // Play the music after the question
+    document.getElementById('musicAfter').play();
 }
 
 function handleNoHover() {
