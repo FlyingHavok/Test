@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Initially show the "Please" cat GIF
     showCatImage('please.gif');
-    // Play the music before the question when the first GIF is loaded
-    const musicBefore = document.getElementById('musicBefore');
-    musicBefore.play();
 });
 
 function handleYes() {
@@ -12,10 +9,9 @@ function handleYes() {
     showCatImage('dance.gif', 'dance 2s infinite');
     document.getElementById('yesBtn').style.display = 'none';
     document.getElementById('noBtn').style.display = 'none';
-    // Pause the music before the question
-    document.getElementById('musicBefore').pause();
-    // Play the music after the question
-    document.getElementById('musicAfter').play();
+    // Play the music before the question on user interaction
+    const musicBefore = document.getElementById('musicBefore');
+    musicBefore.play();
 }
 
 function handleNoHover() {
