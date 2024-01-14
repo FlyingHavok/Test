@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function handleYes() {
-    document.getElementById('question').innerText = 'Yay, finally!';
+    document.getElementById('question').innerText = 'Yay, finally! <3';
     // Show the dancing cat GIF after clicking Yes
     showCatImage('dance.gif', 'dance 2s infinite');
     document.getElementById('yesBtn').style.display = 'none';
