@@ -3,13 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     showCatImage('please.gif');
     // Play the music before the question when the first GIF is loaded
     const musicBefore = document.getElementById('musicBefore');
-    musicBefore.play().then(() => {
-        // Ensure the music plays on some browsers
-        setTimeout(() => {
-            musicBefore.pause();
-            musicBefore.currentTime = 0;
-        }, 100);
-    });
+    musicBefore.play();
 });
 
 function handleYes() {
