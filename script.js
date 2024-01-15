@@ -19,6 +19,7 @@ function handleYes() {
     document.getElementById('musicBefore').pause();
     // Play the music after the question
     document.getElementById('musicAfter').play();
+    document.getElementById('playMusicBtn').style.display = 'none';
 }
 
 function handleNoHover() {
