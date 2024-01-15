@@ -48,6 +48,8 @@ button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
+    border: none;
+    border-radius: 20px; /* Added rounded edges */
 }
 
 #yesBtn {
@@ -65,6 +67,7 @@ button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
+    display: block; /* Initially set to block */
 }
 
 #volumeControl {
