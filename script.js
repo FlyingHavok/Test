@@ -5,26 +5,28 @@ document.getElementById('musicAfter').src = "music_after.mp3";
 
 // Photo frame logic
 const photoFrame = document.getElementById('photoFrame');
-const photoPaths = ['photo1.jpg', 'photo2.jpg', 'photo3.jpg', 'photo4.jpg', 'photo5.jpg', 'photo6.jpg', 'photo7.jpg', 'photo8.jpg'];
+const photoPaths = [
+    'Photo 1.jpg',
+    'Photo 2.jpg',
+    'Photo 3.jpg',
+    'Photo 4.jpg',
+    'Photo 5.jpg',
+    'Photo 6.jpg',
+    'Photo 7.jpg',
+    'Photo 8.jpg'
+];
 
-function setRandomPhoto() {
-    const randomPhotoPath = photoPaths[Math.floor(Math.random() * photoPaths.length)];
-    photoFrame.style.backgroundImage = `url('${randomPhotoPath}')`;
+function getRandomPhoto() {
+    return photoPaths[Math.floor(Math.random() * photoPaths.length)];
 }
 
-function fadeInPhoto() {
-    photoFrame.style.opacity = '1';
+function updatePhoto() {
+    const randomPhoto = getRandomPhoto();
+    photoFrame.style.backgroundImage = `url('${randomPhoto}')`;
 }
 
-function fadeOutPhoto() {
-    photoFrame.style.opacity = '0';
-    setTimeout(() => {
-        setRandomPhoto();
-        fadeInPhoto();
-    }, 1000); // 1 second delay before fading in next photo
-}
+// Call the updatePhoto function initially
+updatePhoto();
 
-// Initial setup
-setRandomPhoto();
-fadeInPhoto();
-setInterval(fadeOutPhoto, 5000); // Change photo every 5 seconds
+// Set interval to change the photo every few seconds
+setInterval(updatePhoto, 5000);
