@@ -2,117 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Will you be my Valentine?</title>
-    <style>
-        body {
-            background-image: url('valentine_background.jpg'); /* Replace 'valentine_background.jpg' with your actual image file */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-        }
-
-        .photo-container {
-            position: relative;
-            margin: 20px;
-            overflow: hidden;
-        }
-
-        .photo {
-            width: 100%;
-            height: auto;
-            border-radius: 20px; /* Rounded edges for photos */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stylish shadow effect */
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .photo:hover {
-            transform: scale(1.1); /* Zoom in on hover */
-        }
-
-        /* Positioning of outer edge photos */
-        .photo-top {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .photo-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .photo-left {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-        }
-
-        .photo-right {
-            position: absolute;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-        }
-    </style>
+    <title>Valentine's Day</title>
 </head>
 <body>
+
     <div class="container">
-        <h1 id="question">Will you be my Valentine? 💖😊</h1>
-        <!-- Centered "Please" cat GIF below the question -->
+        <div id="question">Will you be my Valentine? ❤️</div>
+        
         <div id="cat-container">
-            <audio id="musicBefore" loop volume="0.5">
-                <source src="music_before.mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
             <div id="cat"></div>
         </div>
-        <!-- New container for buttons, volume control, and photos -->
+        
         <div id="buttons-volume-container">
             <div id="buttons-container">
-                <button id="yesBtn" onclick="handleYes()">Yes</button>
+                <button id="yesBtn" onclick="handleYesClick()">Yes</button>
                 <button id="noBtn" onmouseover="handleNoHover()">No</button>
             </div>
-            <!-- Button to play the before music -->
-            <button id="playMusicBtn" onclick="playBeforeMusic()">Play Music</button>
-            <!-- Volume control slider -->
-            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume()">
+            
+            <button id="playMusicBtn" onclick="playMusic()">Play Music</button>
+            
+            <input type="range" id="volumeControl" value="50" max="100" step="1" oninput="adjustVolume()">
         </div>
-        <!-- Outer edge photos -->
-        <div class="photo-container photo-top">
+    </div>
+
+    <!-- Photo Frames -->
+    <div class="frame-container photo-top">
+        <div class="photo-frame">
             <img src="Photo 1.jpg" alt="Photo 1" class="photo">
         </div>
-        <div class="photo-container photo-left">
+    </div>
+    <div class="frame-container photo-left">
+        <div class="photo-frame">
             <img src="Photo 2.jpg" alt="Photo 2" class="photo">
         </div>
-        <div class="photo-container photo-right">
+    </div>
+    <div class="frame-container photo-right">
+        <div class="photo-frame">
             <img src="Photo 3.jpg" alt="Photo 3" class="photo">
         </div>
-        <div class="photo-container photo-bottom">
+    </div>
+    <div class="frame-container photo-bottom">
+        <div class="photo-frame">
             <img src="Photo 4.jpg" alt="Photo 4" class="photo">
         </div>
-        <div class="photo-container photo-bottom">
+    </div>
+    <div class="frame-container photo-bottom">
+        <div class="photo-frame">
             <img src="Photo 5.jpg" alt="Photo 5" class="photo">
         </div>
-        <div class="photo-container photo-bottom">
+    </div>
+    <div class="frame-container photo-bottom">
+        <div class="photo-frame">
             <img src="Photo 6.jpg" alt="Photo 6" class="photo">
         </div>
-        <div class="photo-container photo-bottom">
+    </div>
+    <div class="frame-container photo-bottom">
+        <div class="photo-frame">
             <img src="Photo 7.jpg" alt="Photo 7" class="photo">
         </div>
-        <div class="photo-container photo-bottom">
+    </div>
+    <div class="frame-container photo-bottom">
+        <div class="photo-frame">
             <img src="Photo 8.jpg" alt="Photo 8" class="photo">
         </div>
-        <audio id="musicAfter" loop volume="0.5">
-            <source src="music_after.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
     </div>
 
     <script src="script.js"></script>

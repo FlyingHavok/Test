@@ -89,11 +89,17 @@ button {
     overflow: hidden;
 }
 
+.photo-frame {
+    width: 100%;
+    height: 100%;
+    border: 10px solid white; /* Added white border as a frame */
+    overflow: hidden;
+}
+
 .photo {
-    width: 150px; /* Adjusted width */
-    height: auto;
-    border-radius: 20px; /* Rounded edges for photos */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stylish shadow effect */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio without stretching */
     transition: transform 0.5s ease-in-out;
     position: relative;
     z-index: 1; /* Ensure photos are behind buttons */
