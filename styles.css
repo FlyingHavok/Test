@@ -1,13 +1,6 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    flex-direction: column; /* Updated to column layout */
-}
+/* ... (Previous styles remain unchanged) */
 
+<<<<<<< HEAD
 .container {
     text-align: center;
     margin-bottom: 20px; /* Added margin at the bottom */
@@ -72,4 +65,32 @@ button {
 
 #volumeControl {
     margin-top: 10px; /* Added margin at the top */
+=======
+#photos-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow interaction with elements behind */
+}
+
+.photo {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    opacity: 0; /* Initially hidden */
+    animation: fadeInOut 10s infinite; /* Adjust the animation duration as needed */
+    border: 10px solid white; /* Stylish border */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Stylish shadow */
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+>>>>>>> 57bbda81f76461d2e22520db8c74bf6d0cf6571d
 }
