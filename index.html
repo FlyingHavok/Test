@@ -13,20 +13,6 @@
             background-attachment: fixed;
             background-position: center;
         }
-
-        /* Styling for the fading frame */
-        #photoFrame {
-            position: absolute;
-            width: 30%;
-            height: 50%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-            z-index: 1; /* Set to a lower layer than other elements */
-            left: 5%; /* Adjust as needed */
-            top: 5%; /* Adjust as needed */
-        }
     </style>
 </head>
 <body>
@@ -40,6 +26,8 @@
             </audio>
             <div id="cat"></div>
         </div>
+        <!-- Photo frame below other elements -->
+        <div id="photoFrame" class="photo-frame"></div>
         <!-- New container for buttons and volume control -->
         <div id="buttons-volume-container">
             <div id="buttons-container">
@@ -55,8 +43,6 @@
             <source src="music_after.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
-        <!-- Fading frame for photos -->
-        <div id="photoFrame"></div>
     </div>
 
     <script src="script.js"></script>
