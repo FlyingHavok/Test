@@ -3,13 +3,6 @@ document.getElementById('cat').style.backgroundImage = "url('please.gif')";
 document.getElementById('musicBefore').src = "music_before.mp3";
 document.getElementById('musicAfter').src = "music_after.mp3";
 
-// List of background images
-const backgroundImages = ['Photo1.jpg', 'Photo2.jpg', 'Photo3.jpg', 'Photo4.jpg'];
-
-// Set a random background image
-const randomIndex = Math.floor(Math.random() * backgroundImages.length);
-document.body.style.backgroundImage = `url('${backgroundImages[randomIndex]}')`;
-
 function handleYes() {
     document.getElementById('question').innerText = "Yay, you're my Valentine! 💖😍";
     document.getElementById('cat').style.backgroundImage = "url('dance.gif')";
