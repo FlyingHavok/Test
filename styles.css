@@ -50,6 +50,8 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 20px; /* Added rounded edges */
+    position: relative;
+    z-index: 2; /* Ensure buttons are on top of photos */
 }
 
 #yesBtn {
@@ -68,6 +70,8 @@ button {
     font-size: 16px;
     cursor: pointer;
     display: block; /* Initially set to block */
+    position: relative;
+    z-index: 2; /* Ensure button is on top of photos */
 }
 
 #volumeControl {
@@ -83,69 +87,43 @@ button {
 .photo {
     width: 100%;
     height: auto;
-    max-width: 200px; /* Increased max-width */
+    max-width: 180px; /* Slightly bigger photos */
     border-radius: 20px; /* Rounded edges for photos */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stylish shadow effect */
     transition: transform 0.5s ease-in-out;
+    position: relative;
+    z-index: 1; /* Ensure photos are behind buttons */
 }
 
 .photo:hover {
     transform: scale(1.1); /* Zoom in on hover */
 }
 
-/* Positioning of outer edge photos with nice frames */
-.photo-1 { /* Top */
+/* Positioning of outer edge photos */
+.photo-top {
     position: absolute;
-    top: 5%;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.photo-2 { /* Bottom */
+.photo-bottom {
     position: absolute;
-    bottom: 5%;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.photo-3 { /* Left */
+.photo-left {
     position: absolute;
     top: 50%;
-    left: 5%;
+    left: 0;
     transform: translateY(-50%);
 }
 
-.photo-4 { /* Right */
+.photo-right {
     position: absolute;
     top: 50%;
-    right: 5%;
+    right: 0;
     transform: translateY(-50%);
-}
-
-.photo-5 { /* Top Left */
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    transform: translate(-50%, -50%);
-}
-
-.photo-6 { /* Top Right */
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    transform: translate(50%, -50%);
-}
-
-.photo-7 { /* Bottom Left */
-    position: absolute;
-    bottom: 5%;
-    left: 5%;
-    transform: translate(-50%, 50%);
-}
-
-.photo-8 { /* Bottom Right */
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
-    transform: translate(50%, 50%);
 }
