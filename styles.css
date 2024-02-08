@@ -83,7 +83,7 @@ button {
 .photo {
     width: 100%;
     height: auto;
-    max-width: 150px; /* Set a maximum width for the photos */
+    max-width: 180px; /* Slightly increased max-width */
     border-radius: 20px; /* Rounded edges for photos */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stylish shadow effect */
     transition: transform 0.5s ease-in-out;
@@ -93,31 +93,59 @@ button {
     transform: scale(1.1); /* Zoom in on hover */
 }
 
-/* Positioning of outer edge photos */
-.photo-top {
+/* Positioning of outer edge photos in clock layout */
+.photo-1 { /* 11 o'clock */
     position: absolute;
-    top: 0;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.photo-bottom {
+.photo-2 { /* 12 o'clock */
     position: absolute;
-    bottom: 0;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.photo-left {
+.photo-3 { /* 1 o'clock */
     position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    top: 20%;
+    left: 80%;
+    transform: translateX(-50%);
 }
 
-.photo-right {
+.photo-4 { /* 3 o'clock */
     position: absolute;
     top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+    left: 80%;
+    transform: translateX(-50%);
+}
+
+.photo-5 { /* 5 o'clock */
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.photo-6 { /* 6 o'clock */
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.photo-7 { /* 7 o'clock */
+    position: absolute;
+    bottom: 20%;
+    left: 80%;
+    transform: translateX(-50%);
+}
+
+.photo-8 { /* 9 o'clock */
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+    transform: translateX(-50%);
 }
