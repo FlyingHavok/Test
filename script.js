@@ -24,6 +24,9 @@ function updatePhoto() {
     currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
 }
 
+// Initial display of the first photo
+updatePhoto();
+
 // Interval to update the photo every 5 seconds
 setInterval(updatePhoto, 5000);
 
