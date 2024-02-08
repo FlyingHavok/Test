@@ -12,12 +12,19 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 id="question">Will you be my Valentine? 💖😊</h1>
+        <!-- Top framed photos -->
+        <div class="framed-photos top">
+            <img src="photo1.jpg" alt="Photo 1">
+            <img src="photo2.jpg" alt="Photo 2">
+            <img src="photo3.jpg" alt="Photo 3">
+        </div>
         <!-- Centered "Please" cat GIF below the question -->
         <div id="cat-container">
             <audio id="musicBefore" loop volume="0.5">
@@ -25,6 +32,12 @@
                 Your browser does not support the audio element.
             </audio>
             <div id="cat"></div>
+        </div>
+        <!-- Left and right framed photos -->
+        <div class="framed-photos side">
+            <img src="photo4.jpg" alt="Photo 4">
+            <img src="photo5.jpg" alt="Photo 5">
+            <img src="photo6.jpg" alt="Photo 6">
         </div>
         <!-- New container for buttons and volume control -->
         <div id="buttons-volume-container">
@@ -36,6 +49,12 @@
             <button id="playMusicBtn" onclick="playBeforeMusic()">Play Music</button>
             <!-- Volume control slider -->
             <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume()">
+        </div>
+        <!-- Bottom framed photos -->
+        <div class="framed-photos bottom">
+            <img src="photo7.jpg" alt="Photo 7">
+            <img src="photo8.jpg" alt="Photo 8">
+            <img src="photo9.jpg" alt="Photo 9">
         </div>
         <audio id="musicAfter" loop volume="0.5">
             <source src="music_after.mp3" type="audio/mp3">
