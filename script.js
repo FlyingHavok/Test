@@ -1,51 +1,51 @@
-// Get elements
-const catElement = document.getElementById("cat");
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-const playMusicBtn = document.getElementById("playMusicBtn");
-const volumeControl = document.getElementById("volumeControl");
+document.addEventListener('DOMContentLoaded', function () {
+    // Initially show the "Please" cat GIF
+    showCatImage('please.gif');
+});
 
-// Flag to check if the No button has been clicked
-let isClicked = false;
-
-// Event listener for the Yes button click
-function handleYesClick() {
-    document.getElementById("question").innerHTML = "Yay, finally! 💃";
-    catElement.style.backgroundImage = "url('dance.gif')";
-    noBtn.style.display = "none"; // Hide the No button
-    isClicked = true;
-}
-
-// Function to move the No button to a random position on hover
-function moveNoButton() {
-    const newX = Math.random() * (window.innerWidth - noBtn.clientWidth);
-    const newY = Math.random() * (window.innerHeight - noBtn.clientHeight);
-    noBtn.style.left = newX + "px";
-    noBtn.style.top = newY + "px";
-}
-
-// Event listener for the No button hover
-noBtn.addEventListener("mouseover", handleNoHover);
-
-// Function to handle hover effect on the No button
-function handleNoHover() {
-    if (!isClicked) {
-        // Move the No button to a random position
-        moveNoButton();
-    }
-}
-
-// Function to play music
-function playMusic() {
-    const musicBefore = new Audio('music_before.mp3');
+function playBeforeMusic() {
+    // Play the music before the question on user interaction
+    const musicBefore = document.getElementById('musicBefore');
     musicBefore.play();
 }
 
-// Function to adjust volume
-function adjustVolume() {
-    const volumeValue = volumeControl.value / 100;
-    // Adjust volume for the background music or any other audio elements
+function handleYes() {
+    document.getElementById('question').innerText = 'Yay, finally!';
+    // Show the dancing cat GIF after clicking Yes
+    showCatImage('dance.gif', 'dance 2s infinite');
+    document.getElementById('yesBtn').style.display = 'none';
+    document.getElementById('noBtn').style.display = 'none';
+    // Pause the music before the question
+    document.getElementById('musicBefore').pause();
+    // Play the music after the question
+    document.getElementById('musicAfter').play();
+    document.getElementById('playMusicBtn').style.display = 'none';
 }
 
-// ... any other functions or code ...
+function handleNoHover() {
+    const noBtn = document.getElementById('noBtn');
+    const randomX = Math.floor(Math.random() * (window.innerWidth - noBtn.clientWidth));
+    const randomY = Math.floor(Math.random() * (window.innerHeight - noBtn.clientHeight));
+    noBtn.style.position = 'absolute';
+    noBtn.style.left = randomX + 'px';
+    noBtn.style.top = randomY + 'px';
+}
 
+function showCatImage(src, animation = '') {
+    const catDiv = document.getElementById('cat');
+    catDiv.style.backgroundImage = `url(${src})`;
+    if (animation !== '') {
+        catDiv.style.animation = animation;
+    }
+}
+
+// New function to change the volume
+function changeVolume() {
+    const volumeControl = document.getElementById('volumeControl');
+    const musicBefore = document.getElementById('musicBefore');
+    const musicAfter = document.getElementById('musicAfter');
+    
+    // Set the volume for both audio elements
+    musicBefore.volume = volumeControl.value;
+    musicAfter.volume = volumeControl.value;
+}
