@@ -1,51 +1,85 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Initially show the "Please" cat GIF
-    showCatImage('please.gif');
-});
+document.addEventListener("DOMContentLoaded", function () {
+    const outerPhotos = document.querySelectorAll(".photo-outer");
+    const noButton = document.getElementById("noBtn");
 
-function playBeforeMusic() {
-    // Play the music before the question on user interaction
-    const musicBefore = document.getElementById('musicBefore');
-    musicBefore.play();
-}
+<<<<<<< HEAD
+    // Function to display a random photo on the outer edges
+    function displayRandomPhoto() {
+        // Reset opacity for all outer photos
+        outerPhotos.forEach((photo) => {
+            photo.style.opacity = 0;
+        });
 
-function handleYes() {
-    document.getElementById('question').innerText = 'Yay, finally!';
-    // Show the dancing cat GIF after clicking Yes
-    showCatImage('dance.gif', 'dance 2s infinite');
-    document.getElementById('yesBtn').style.display = 'none';
-    document.getElementById('noBtn').style.display = 'none';
-    // Pause the music before the question
-    document.getElementById('musicBefore').pause();
-    // Play the music after the question
-    document.getElementById('musicAfter').play();
-    document.getElementById('playMusicBtn').style.display = 'none';
-}
-
-function handleNoHover() {
-    const noBtn = document.getElementById('noBtn');
-    const randomX = Math.floor(Math.random() * (window.innerWidth - noBtn.clientWidth));
-    const randomY = Math.floor(Math.random() * (window.innerHeight - noBtn.clientHeight));
-    noBtn.style.position = 'absolute';
-    noBtn.style.left = randomX + 'px';
-    noBtn.style.top = randomY + 'px';
-}
-
-function showCatImage(src, animation = '') {
-    const catDiv = document.getElementById('cat');
-    catDiv.style.backgroundImage = `url(${src})`;
-    if (animation !== '') {
-        catDiv.style.animation = animation;
+        // Choose a random photo and display it
+        const randomIndex = Math.floor(Math.random() * outerPhotos.length);
+        const randomPhoto = outerPhotos[randomIndex];
+        randomPhoto.style.opacity = 1;
     }
-}
 
-// New function to change the volume
-function changeVolume() {
-    const volumeControl = document.getElementById('volumeControl');
-    const musicBefore = document.getElementById('musicBefore');
-    const musicAfter = document.getElementById('musicAfter');
-    
-    // Set the volume for both audio elements
-    musicBefore.volume = volumeControl.value;
-    musicAfter.volume = volumeControl.value;
-}
+    // Initially display a random photo
+    displayRandomPhoto();
+
+    // Set interval to change photos every few seconds
+    setInterval(displayRandomPhoto, 5000);
+
+    // Function to move the "No" button to a random spot
+    function moveNoButton() {
+        const maxX = window.innerWidth - noButton.clientWidth;
+        const maxY = window.innerHeight - noButton.clientHeight;
+
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        noButton.style.left = `${randomX}px`;
+        noButton.style.top = `${randomY}px`;
+=======
+    // Setting initial state
+    let catAnimation = "please"; // Initial cat animation
+    let volume = 0.5; // Initial volume
+
+    // Function to play the before music
+    window.playBeforeMusic = function () {
+        musicBefore.play();
+        playMusicBtn.style.display = "none"; // Hide the button after clicking
+    };
+
+    // Function to handle the Yes button click
+    window.handleYes = function () {
+        document.getElementById("question").innerText = "Yay, finally! 💃🎉"; // Change the question
+        catAnimation = "dance"; // Change cat animation
+        cat.style.backgroundImage = `url('dance.gif')`; // Change cat animation
+        musicBefore.pause(); // Pause the before music
+        musicAfter.play(); // Play the after music
+        noBtn.style.display = "none"; // Hide the No button
+    };
+
+    // Function to handle the No button hover
+    window.handleNoHover = function () {
+        // Move the No button to a random location
+        const randomX = Math.random() * (window.innerWidth - noBtn.clientWidth);
+        const randomY = Math.random() * (window.innerHeight - noBtn.clientHeight);
+        noBtn.style.left = `${randomX}px`;
+        noBtn.style.top = `${randomY}px`;
+    };
+
+    // Function to change volume
+    window.changeVolume = function () {
+        volume = volumeControl.value;
+        musicBefore.volume = volume;
+        musicAfter.volume = volume;
+    };
+
+    // Update cat animation
+    function updateCatAnimation() {
+        cat.style.backgroundImage = `url('${catAnimation}.gif')`;
+        cat.style.width = "300px";
+        cat.style.height = "300px";
+        cat.style.backgroundSize = "cover";
+        cat.style.backgroundRepeat = "no-repeat";
+        cat.style.margin = "0 auto";
+>>>>>>> parent of e6f2ada (3)
+    }
+
+    // Add event listener for mouseover on the "No" button
+    noButton.addEventListener("mouseover", moveNoButton);
+});
