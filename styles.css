@@ -4,6 +4,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    margin: 0;
 }
 
 .container {
@@ -84,19 +85,18 @@ button {
     margin-top: 10px;
 }
 
+.side-left {
+    margin-right: auto;
+}
+
+.side-right {
+    margin-left: auto;
+}
+
 .bottom {
     margin-top: auto;
 }
 
 .bottom img {
     transform: rotate(180deg);
-}
-
-.side {
-    flex-direction: column;
-}
-
-.side img {
-    transform: rotate(-90deg);
-    margin: 5px;
 }
