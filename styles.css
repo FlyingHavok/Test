@@ -83,7 +83,7 @@ button {
 .photo {
     width: 100%;
     height: auto;
-    max-width: 180px; /* Slightly increased max-width */
+    max-width: 200px; /* Increased max-width */
     border-radius: 20px; /* Rounded edges for photos */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stylish shadow effect */
     transition: transform 0.5s ease-in-out;
@@ -93,59 +93,59 @@ button {
     transform: scale(1.1); /* Zoom in on hover */
 }
 
-/* Positioning of outer edge photos in clock layout */
-.photo-1 { /* 11 o'clock */
+/* Positioning of outer edge photos with nice frames */
+.photo-1 { /* Top */
     position: absolute;
-    top: 20%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.photo-2 { /* 12 o'clock */
+.photo-2 { /* Bottom */
     position: absolute;
-    top: 10%;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.photo-3 { /* 1 o'clock */
-    position: absolute;
-    top: 20%;
-    left: 80%;
-    transform: translateX(-50%);
-}
-
-.photo-4 { /* 3 o'clock */
+.photo-3 { /* Left */
     position: absolute;
     top: 50%;
-    left: 80%;
-    transform: translateX(-50%);
+    left: 5%;
+    transform: translateY(-50%);
 }
 
-.photo-5 { /* 5 o'clock */
+.photo-4 { /* Right */
     position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
 }
 
-.photo-6 { /* 6 o'clock */
+.photo-5 { /* Top Left */
     position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 5%;
+    left: 5%;
+    transform: translate(-50%, -50%);
 }
 
-.photo-7 { /* 7 o'clock */
+.photo-6 { /* Top Right */
     position: absolute;
-    bottom: 20%;
-    left: 80%;
-    transform: translateX(-50%);
+    top: 5%;
+    right: 5%;
+    transform: translate(50%, -50%);
 }
 
-.photo-8 { /* 9 o'clock */
+.photo-7 { /* Bottom Left */
     position: absolute;
-    bottom: 20%;
-    left: 20%;
-    transform: translateX(-50%);
+    bottom: 5%;
+    left: 5%;
+    transform: translate(-50%, 50%);
+}
+
+.photo-8 { /* Bottom Right */
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    transform: translate(50%, 50%);
 }
