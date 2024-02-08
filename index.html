@@ -13,13 +13,14 @@
             background-attachment: fixed;
             background-position: center;
             margin: 0;
+            overflow: hidden; /* Hide overflow for the framed photos */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 id="question">Will you be my Valentine? 💖😊</h1>
-        <!-- Top framed photos -->
+        <!-- Framed photos -->
         <div class="framed-photos top">
             <img src="photo1.jpg" alt="Photo 1">
             <img src="photo2.jpg" alt="Photo 2">
@@ -33,9 +34,11 @@
             </audio>
             <div id="cat"></div>
         </div>
-        <!-- Left framed photo -->
-        <div class="framed-photos side-left">
+        <!-- Left and right framed photos -->
+        <div class="framed-photos side">
             <img src="photo4.jpg" alt="Photo 4">
+            <img src="photo5.jpg" alt="Photo 5">
+            <img src="photo6.jpg" alt="Photo 6">
         </div>
         <!-- New container for buttons and volume control -->
         <div id="buttons-volume-container">
@@ -48,20 +51,15 @@
             <!-- Volume control slider -->
             <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume()">
         </div>
-        <!-- Right framed photo -->
-        <div class="framed-photos side-right">
-            <img src="photo5.jpg" alt="Photo 5">
-        </div>
-        <!-- Bottom framed photos -->
-        <div class="framed-photos bottom">
-            <img src="photo6.jpg" alt="Photo 6">
-            <img src="photo7.jpg" alt="Photo 7">
-            <img src="photo8.jpg" alt="Photo 8">
-        </div>
         <audio id="musicAfter" loop volume="0.5">
             <source src="music_after.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
+        <div class="framed-photos bottom">
+            <img src="photo7.jpg" alt="Photo 7">
+            <img src="photo8.jpg" alt="Photo 8">
+            <img src="photo9.jpg" alt="Photo 9">
+        </div>
     </div>
 
     <script src="script.js"></script>

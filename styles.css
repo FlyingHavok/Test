@@ -4,11 +4,12 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    margin: 0;
+    overflow: hidden; /* Hide overflow for the framed photos */
 }
 
 .container {
     text-align: center;
+    position: relative;
 }
 
 #question {
@@ -16,9 +17,10 @@ body {
 }
 
 .framed-photos {
+    position: absolute;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 10px;
 }
 
 .framed-photos img {
@@ -26,6 +28,23 @@ body {
     height: 100px;
     border: 5px solid white;
     border-radius: 10px;
+}
+
+.framed-photos.top {
+    top: 0;
+}
+
+.framed-photos.bottom {
+    bottom: 0;
+}
+
+.framed-photos.side {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.side img {
+    margin: 5px;
 }
 
 #cat-container {
@@ -83,20 +102,4 @@ button {
 
 #volumeControl {
     margin-top: 10px;
-}
-
-.side-left {
-    margin-right: auto;
-}
-
-.side-right {
-    margin-left: auto;
-}
-
-.bottom {
-    margin-top: auto;
-}
-
-.bottom img {
-    transform: rotate(180deg);
 }
