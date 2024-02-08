@@ -7,6 +7,10 @@ body {
     margin: 0;
     flex-direction: column; /* Updated to column layout */
     position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .container {
@@ -92,6 +96,7 @@ button {
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     animation: fadeInOut 5s infinite; /* Adjust the duration as needed */
 }
 
