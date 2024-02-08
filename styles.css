@@ -4,8 +4,14 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    flex-direction: column; /* Updated to column layout */
     margin: 0;
+    flex-direction: column; /* Updated to column layout */
+    position: relative;
+    background-image: url('valentine_background.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .container {
@@ -79,26 +85,45 @@ button {
 }
 
 .photo-container {
-    position: absolute;
+    position: absolute; /* Change to absolute positioning */
     overflow: hidden;
-    width: 150px; /* Adjusted photo container size */
-    height: 150px;
-    border-radius: 20px; /* Rounded edges for photos */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stylish shadow effect */
 }
 
-.photo-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.photo {
+    width: 150px; /* Adjusted width */
+    height: auto;
+    border-radius: 20px; /* Rounded edges for photos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stylish shadow effect */
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    z-index: 1; /* Ensure photos are behind buttons */
+}
+
+.photo:hover {
+    transform: scale(1.1); /* Zoom in on hover */
 }
 
 /* Positioning of outer edge photos */
-#photo1 { top: 10vh; left: 10vw; }
-#photo2 { top: 10vh; left: 50vw; }
-#photo3 { top: 10vh; left: 90vw; }
-#photo4 { top: 50vh; left: 10vw; }
-#photo5 { top: 50vh; left: 90vw; }
-#photo6 { bottom: 10vh; left: 10vw; }
-#photo7 { bottom: 10vh; left: 50vw; }
-#photo8 { bottom: 10vh; left: 90vw; }
+.photo-top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.photo-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.photo-left {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.photo-right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
