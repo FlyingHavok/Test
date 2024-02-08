@@ -40,3 +40,32 @@ function changeVolume() {
     musicBefore.volume = volumeControl.value;
     musicAfter.volume = volumeControl.value;
 }
+
+// Function to add fading photos to the container
+function addFadingPhotos() {
+    const photoContainer = document.getElementById('photos-container');
+
+    for (let i = 1; i <= 8; i++) {
+        const photo = document.createElement('img');
+        photo.src = `Photo ${i}.jpg`; // Replace 'jpg' with the actual image format
+        photo.alt = `Photo ${i}`;
+        photo.className = 'photo';
+        setRandomPosition(photo);
+        photoContainer.appendChild(photo);
+    }
+}
+
+// Function to set a random position for the photo
+function setRandomPosition(photo) {
+    const maxX = window.innerWidth - 300;
+    const maxY = window.innerHeight - 300;
+
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    photo.style.left = `${randomX}px`;
+    photo.style.top = `${randomY}px`;
+}
+
+// Call the function to add fading photos
+addFadingPhotos();

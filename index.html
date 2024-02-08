@@ -12,6 +12,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
+            overflow: hidden; /* Hide overflow to prevent overlap */
         }
     </style>
 </head>
@@ -26,7 +27,7 @@
             </audio>
             <div id="cat"></div>
         </div>
-        <!-- New container for buttons and volume control -->
+        <!-- New container for buttons, volume control, and photos -->
         <div id="buttons-volume-container">
             <div id="buttons-container">
                 <button id="yesBtn" onclick="handleYes()">Yes</button>
@@ -36,6 +37,8 @@
             <button id="playMusicBtn" onclick="playBeforeMusic()">Play Music</button>
             <!-- Volume control slider -->
             <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume()">
+            <!-- Container for fading photos -->
+            <div id="photos-container"></div>
         </div>
         <audio id="musicAfter" loop volume="0.5">
             <source src="music_after.mp3" type="audio/mp3">
