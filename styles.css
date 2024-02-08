@@ -83,6 +83,7 @@ button {
 .photo {
     width: 100%;
     height: auto;
+    max-width: 150px; /* Set a maximum width for the photos */
     border-radius: 20px; /* Rounded edges for photos */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stylish shadow effect */
     transition: transform 0.5s ease-in-out;
