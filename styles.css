@@ -6,6 +6,10 @@ body {
     height: 100vh;
     margin: 0;
     flex-direction: column; /* Updated to column layout */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .container {
