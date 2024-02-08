@@ -3,30 +3,40 @@ document.getElementById('cat').style.backgroundImage = "url('please.gif')";
 document.getElementById('musicBefore').src = "music_before.mp3";
 document.getElementById('musicAfter').src = "music_after.mp3";
 
-// Photo frame logic
-const photoFrame = document.getElementById('photoFrame');
-const photoPaths = [
-    'Photo 1.jpg',
-    'Photo 2.jpg',
-    'Photo 3.jpg',
-    'Photo 4.jpg',
-    'Photo 5.jpg',
-    'Photo 6.jpg',
-    'Photo 7.jpg',
-    'Photo 8.jpg'
-];
-
-function getRandomPhoto() {
-    return photoPaths[Math.floor(Math.random() * photoPaths.length)];
+function handleYes() {
+    document.getElementById('question').innerText = "Yay, you're my Valentine! 💖😍";
+    document.getElementById('cat').style.backgroundImage = "url('dance.gif')";
+    document.getElementById('playMusicBtn').style.display = 'none';
+    document.getElementById('noBtn').style.display = 'none';
 }
 
-function updatePhoto() {
-    const randomPhoto = getRandomPhoto();
-    photoFrame.style.backgroundImage = `url('${randomPhoto}')`;
+function handleNoHover() {
+    var noButton = document.getElementById('noBtn');
+    var maxX = window.innerWidth - noButton.clientWidth;
+    var maxY = window.innerHeight - noButton.clientHeight;
+    
+    var randomX = Math.floor(Math.random() * maxX);
+    var randomY = Math.floor(Math.random() * maxY);
+    
+    noButton.style.position = 'absolute';
+    noButton.style.left = randomX + 'px';
+    noButton.style.top = randomY + 'px';
 }
 
-// Call the updatePhoto function initially
-updatePhoto();
+function playBeforeMusic() {
+    var musicBefore = document.getElementById('musicBefore');
+    if (musicBefore.paused) {
+        musicBefore.play();
+    } else {
+        musicBefore.pause();
+    }
+}
 
-// Set interval to change the photo every few seconds
-setInterval(updatePhoto, 5000);
+function changeVolume() {
+    var volumeControl = document.getElementById('volumeControl');
+    var musicBefore = document.getElementById('musicBefore');
+    var musicAfter = document.getElementById('musicAfter');
+    
+    musicBefore.volume = volumeControl.value;
+    musicAfter.volume = volumeControl.value;
+}

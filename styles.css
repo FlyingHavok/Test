@@ -6,7 +6,6 @@ body {
     height: 100vh;
     margin: 0;
     flex-direction: column; /* Updated to column layout */
-    position: relative;
 }
 
 .container {
@@ -36,8 +35,6 @@ body {
     flex-direction: column; /* Updated to column layout */
     align-items: center;
     justify-content: center; /* Centered vertically */
-    position: relative; /* Position relative to body */
-    z-index: 1; /* Higher stacking order than the frame */
 }
 
 #buttons-container {
@@ -75,31 +72,4 @@ button {
 
 #volumeControl {
     margin-top: 10px; /* Added margin at the top */
-}
-
-.frame-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0; /* Lower stacking order than other elements */
-}
-
-#photoFrame {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    animation: fadeInOut 5s infinite; /* Adjust the duration as needed */
-}
-
-@keyframes fadeInOut {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
 }
